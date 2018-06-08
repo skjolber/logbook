@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -140,7 +141,11 @@ final class RemoteRequest extends HttpServletRequestWrapper implements RawHttpRe
 
     @SneakyThrows
     static String encode(final String s, final String charset) {
-        return URLEncoder.encode(s, charset);
+        try {
+			return URLEncoder.encode(s, charset);
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException(e);
+		}
     }
 
     @Override

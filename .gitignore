@@ -7,3 +7,9 @@ target/
 /.mvn/wrapper/*.jar
 
 *.log
+
+### Eclipse ###
+.settings/
+.classpath
+.project
+
