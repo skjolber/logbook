@@ -1,0 +1,10 @@
+<configuration>
+
+    <appender name="STANDARD" class="ch.qos.logback.core.helpers.NOPAppender">
+    </appender>
+
+    <root level="TRACE">
+        <appender-ref ref="STANDARD" />
+    </root>
+    
+</configuration>
