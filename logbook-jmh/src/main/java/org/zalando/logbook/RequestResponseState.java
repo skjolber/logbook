@@ -1,5 +1,6 @@
 package org.zalando.logbook;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -10,46 +11,34 @@ import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
-import org.zalando.logbook.autoconfigure.LogbookAutoConfiguration;
-import org.zalando.logbook.autoconfigure.LogbookProperties;
 import org.zalando.logbook.jmh.DefaultCorrelation;
 import org.zalando.logbook.jmh.DefaultPrecorrelation;
-import org.zalando.logbook.json.CompactingJsonBodyFilter;
-import org.zalando.logbook.logstash.LogstashLogbackSink;
 
 @State(Scope.Benchmark)
-public class LogbookState extends RequestResponseState {
+public class RequestResponseState {
 
-	private Logbook autoconfigurationLogbook;
-	private Logbook autoconfigurationLogstashLogbook;
+	protected HttpResponse response;
+	protected HttpRequest request;
+	
+	protected DefaultCorrelation defaultCorrelation = new DefaultCorrelation("id", Duration.ofMillis(100));
+	protected DefaultPrecorrelation defaultPrecorrelation = new DefaultPrecorrelation("id", defaultCorrelation);
 
-	private Logbook logstashStreamingJsonHttpLogFormatterLogbook;
-	private Logbook noopHttpLogFormatterLogbook;
-	private Logbook streamingAutoconfigurationLogbook;
-
+	protected HttpResponse minimalResponse;
+	protected Correlation correlation;
+	
+	protected HttpRequest minimalRequest;
+	protected Precorrelation precorrelation; 
+	
 	@Setup(Level.Trial)
-    public void setUp(HttpLogFormatterState state) throws Exception {
-		super.setUp();
-		
-		LogbookProperties properties = new LogbookProperties();
-		LogbookAutoConfiguration ac = new LogbookAutoConfiguration(properties);
-		
-		autoconfigurationLogbook = ac.logbook(ac.requestCondition(), Arrays.asList(ac.headerFilter()), Arrays.asList(ac.queryFilter()), Arrays.asList(ac.bodyFilter()), Arrays.asList(ac.requestFilter()), Arrays.asList(ac.responseFilter()), ac.strategy(), ac.sink(ac.httpFormatter(), ac.writer()));
-
-		streamingAutoconfigurationLogbook = ac.logbook(ac.requestCondition(), Arrays.asList(ac.headerFilter()), Arrays.asList(ac.queryFilter()), Arrays.asList(ac.bodyFilter()), Arrays.asList(ac.requestFilter()), Arrays.asList(ac.responseFilter()), ac.strategy(), ac.sink(state.getStreamingHttpLogFormatter(), ac.writer()));
-
-        final Sink sink = new LogstashLogbackSink(state.getJsonHttpLogFormatter());
-		
-		autoconfigurationLogstashLogbook = ac.logbook(ac.requestCondition(), Arrays.asList(ac.headerFilter()), Arrays.asList(ac.queryFilter()), Arrays.asList(ac.bodyFilter(), new CompactingJsonBodyFilter()), Arrays.asList(ac.requestFilter()), Arrays.asList(ac.responseFilter()), ac.strategy(), sink);
-
-        final Sink streaming = new LogstashLogbackSink(state.getStreamingJsonHttpLogFormatter());
-
-        logstashStreamingJsonHttpLogFormatterLogbook = ac.logbook(ac.requestCondition(), Arrays.asList(ac.headerFilter()), Arrays.asList(ac.queryFilter()), Arrays.asList(ac.bodyFilter(), new CompactingJsonBodyFilter()), Arrays.asList(ac.requestFilter()), Arrays.asList(ac.responseFilter()), ac.strategy(), streaming);
-
-        final Sink noop = new LogstashLogbackSink(state.getNoopHttpLogFormatter());
-
-        noopHttpLogFormatterLogbook = ac.logbook(ac.requestCondition(), Arrays.asList(ac.headerFilter()), Arrays.asList(ac.queryFilter()), Arrays.asList(ac.bodyFilter(), new CompactingJsonBodyFilter()), Arrays.asList(ac.requestFilter()), Arrays.asList(ac.responseFilter()), ac.strategy(), noop);
-
+    public void setUp() throws Exception {
+        minimalResponse = MockHttpResponse.create()
+                .withContentType("application/json")
+                .withBodyAsString("{\"name\":\"Bob\"}");
+        
+        minimalRequest = MockHttpRequest.create()
+                .withContentType("application/json")
+                .withBodyAsString("{\"name\":\"Bob\"}");
+        
         request = MockHttpRequest.create()
                 .withContentType("application/json")
                 .withHeaders(defaultOpenIdConnectHeaders(defaultIstioHeaders(defaultRequestHeaders())))
@@ -111,29 +100,13 @@ public class LogbookState extends RequestResponseState {
 		map.put("x-ot-span-context", Arrays.asList(UUID.randomUUID().toString()));
 		return map;
 	}
-	
-	public Logbook getAutoconfigurationLogbook() {
-		return autoconfigurationLogbook;
-	}
-	
-	public Logbook getAutoconfigurationLogstashLogbook() {
-		return autoconfigurationLogstashLogbook;
-	}
-	
+		
 	public HttpRequest getRequest() {
 		return request;
 	}
 	
 	public HttpResponse getResponse() {
 		return response;
-	}
-
-	public Logbook getLogstashStreamingJsonHttpLogFormatterLogbook() {
-		return logstashStreamingJsonHttpLogFormatterLogbook;
-	}
-	
-	public Logbook getNoopHttpLogFormatterLogbook() {
-		return noopHttpLogFormatterLogbook;
 	}
 	
 	public DefaultCorrelation getDefaultCorrelation() {
@@ -143,8 +116,19 @@ public class LogbookState extends RequestResponseState {
 		return defaultPrecorrelation;
 	}
 	
-	public Logbook getStreamingAutoconfigurationLogbook() {
-		return streamingAutoconfigurationLogbook;
+	public HttpRequest getMinimalRequest() {
+		return minimalRequest;
 	}
 	
+	public HttpResponse getMinimalResponse() {
+		return minimalResponse;
+	}
+	
+	public Correlation getCorrelation() {
+		return correlation;
+	}
+	
+	public Precorrelation getPrecorrelation() {
+		return precorrelation;
+	}
 }

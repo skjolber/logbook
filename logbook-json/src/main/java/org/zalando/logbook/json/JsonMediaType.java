@@ -1,8 +1,8 @@
 package org.zalando.logbook.json;
 
-import org.zalando.logbook.common.MediaTypeQuery;
-
 import java.util.function.Predicate;
+
+import org.zalando.logbook.common.MediaTypeQuery;
 
 final class JsonMediaType {
 
@@ -11,5 +11,29 @@ final class JsonMediaType {
     }
 
     static final Predicate<String> JSON = MediaTypeQuery.compile("application/json", "application/*+json");
+
+    static final Predicate<String> JSON2 = contentType -> {
+    	if(contentType.startsWith("application/")) {
+	    	int index = contentType.indexOf(';', 12);
+	    	if(index != -1) {
+	    		if(index > 16) {
+		    		// application/some+json;charset=utf-8
+		        	return contentType.regionMatches(index - 5, "+json", 0, 5);
+	    		}
+	    		
+	    		// application/json;charset=utf-8
+	        	return contentType.regionMatches(index - 4, "json", 0, 4);
+	    	} else {
+	    		// application/json
+		    	if(contentType.length() == 16) {
+		        	return contentType.endsWith("json");
+		    	}
+	    		// application/some+json
+	        	return contentType.endsWith("+json");
+	    	}
+    	}
+    	return false;
+    };
+
 
 }

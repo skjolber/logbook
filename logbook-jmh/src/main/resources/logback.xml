@@ -1,6 +1,6 @@
 <configuration>
 
-    <appender name="STANDARD" class="ch.qos.logback.core.helpers.NOPAppender">
+    <appender name="STANDARD" class="org.zalando.logbook.NOPAppender">
     </appender>
 
     <root level="TRACE">

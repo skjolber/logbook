@@ -14,3 +14,5 @@ target/
 .project
 .factorypath
 
+### various ###
+jmh-result.json

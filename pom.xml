@@ -78,7 +78,7 @@
         <spring-security.version>5.1.5.RELEASE</spring-security.version>
         <junit-platform.version>1.4.2</junit-platform.version>
         <junit-jupiter.version>5.4.2</junit-jupiter.version>
-        <jmh.version>1.19</jmh.version>
+        <jmh.version>1.21</jmh.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -624,10 +624,12 @@
                 <groupId>org.basepom.maven</groupId>
                 <artifactId>duplicate-finder-maven-plugin</artifactId>
             </plugin>
+<!--
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
             </plugin>
+-->
 <!--
             <plugin>
                 <groupId>org.owasp</groupId>

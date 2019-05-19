@@ -10,7 +10,7 @@ import static org.zalando.logbook.RequestURI.Component.PATH;
 import static org.zalando.logbook.RequestURI.Component.QUERY;
 import static org.zalando.logbook.RequestURI.Component.SCHEME;
 
-final class RequestURI {
+public final class RequestURI {
 
     private RequestURI() {
 
@@ -20,25 +20,37 @@ final class RequestURI {
         SCHEME, AUTHORITY, PATH, QUERY
     }
 
-    static String reconstruct(final HttpRequest request) {
+    public static String reconstruct(final HttpRequest request) {
+        final StringBuilder url = new StringBuilder();
+        reconstruct(request, EnumSet.allOf(Component.class), url);
+        return url.toString();
+    }
+
+    public static String reconstruct(final HttpRequest request, StringBuilder output) {
         return reconstruct(request, EnumSet.allOf(Component.class));
     }
 
-    static String reconstruct(final HttpRequest request, final Component... components) {
-        return reconstruct(request, EnumSet.copyOf(asList(components)));
+    public static String reconstruct(final HttpRequest request, final Component... components) {
+        final StringBuilder url = new StringBuilder();
+        reconstruct(request, EnumSet.copyOf(asList(components)), url);
+        return url.toString();
     }
 
-    private static String reconstruct(final HttpRequest request, final Set<Component> components) {
+    public static String reconstruct(final HttpRequest request, final Set<Component> components) {
+        final StringBuilder url = new StringBuilder();
+        reconstruct(request, components, url);
+        return url.toString();
+    }
+
+    private static void reconstruct(final HttpRequest request, final Set<Component> components, StringBuilder url) {
         final String scheme = request.getScheme();
         final String host = request.getHost();
         final Optional<Integer> port = request.getPort();
         final String path = request.getPath();
         final String query = request.getQuery();
 
-        final StringBuilder url = new StringBuilder();
-
         if (components.contains(SCHEME)) {
-            url.append(scheme).append(":");
+            url.append(scheme).append(':');
         }
 
         if (components.contains(AUTHORITY)) {
@@ -63,13 +75,11 @@ final class RequestURI {
         if (components.contains(QUERY) && !query.isEmpty()) {
             url.append('?').append(query);
         }
-
-        return url.toString();
     }
 
     private static boolean isNotStandardPort(final String scheme, final int port) {
-        return "http".equals(scheme) && port != 80 ||
-                "https".equals(scheme) && port != 443;
+        return ("http".equals(scheme) && port != 80) ||
+                ("https".equals(scheme) && port != 443);
     }
 
 }

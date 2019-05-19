@@ -1,7 +1,7 @@
 [
     {
-        "jmhVersion" : "1.19",
-        "benchmark" : "org.zalando.logbook.LogbookBenchmark.autoconfigurationJsonRequest",
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.HttpLogFormatterBenchmark.defaultRequest",
         "mode" : "thrpt",
         "threads" : 1,
         "forks" : 1,
@@ -9,40 +9,41 @@
         "jvmArgs" : [
         ],
         "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "25.212-b04",
-        "warmupIterations" : 2,
+        "warmupIterations" : 5,
         "warmupTime" : "10 s",
         "warmupBatchSize" : 1,
         "measurementIterations" : 5,
         "measurementTime" : "10 s",
         "measurementBatchSize" : 1,
         "primaryMetric" : {
-            "score" : 141954.47497396555,
-            "scoreError" : 717.0759747949364,
+            "score" : 56915.496387170104,
+            "scoreError" : 216.29715331635578,
             "scoreConfidence" : [
-                141237.3989991706,
-                142671.5509487605
+                56699.199233853746,
+                57131.79354048646
             ],
             "scorePercentiles" : {
-                "0.0" : 141807.7572337259,
-                "50.0" : 141836.2757802577,
-                "90.0" : 142227.5600735641,
-                "95.0" : 142227.5600735641,
-                "99.0" : 142227.5600735641,
-                "99.9" : 142227.5600735641,
-                "99.99" : 142227.5600735641,
-                "99.999" : 142227.5600735641,
-                "99.9999" : 142227.5600735641,
-                "100.0" : 142227.5600735641
+                "0.0" : 56852.30828217975,
+                "50.0" : 56937.202837182485,
+                "90.0" : 56971.17495752881,
+                "95.0" : 56971.17495752881,
+                "99.0" : 56971.17495752881,
+                "99.9" : 56971.17495752881,
+                "99.99" : 56971.17495752881,
+                "99.999" : 56971.17495752881,
+                "99.9999" : 56971.17495752881,
+                "100.0" : 56971.17495752881
             },
             "scoreUnit" : "ops/s",
             "rawData" : [
                 [
-                    141836.2757802577,
-                    142069.9924880427,
-                    141807.7572337259,
-                    141830.78929423736,
-                    142227.5600735641
+                    56852.30828217975,
+                    56971.17495752881,
+                    56958.178680150886,
+                    56937.202837182485,
+                    56858.617178808585
                 ]
             ]
         },
@@ -50,8 +51,8 @@
         }
     },
     {
-        "jmhVersion" : "1.19",
-        "benchmark" : "org.zalando.logbook.LogbookBenchmark.autoconfigurationJsonRequestResponse",
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.HttpLogFormatterBenchmark.defaultResponse",
         "mode" : "thrpt",
         "threads" : 1,
         "forks" : 1,
@@ -59,40 +60,41 @@
         "jvmArgs" : [
         ],
         "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "25.212-b04",
-        "warmupIterations" : 2,
+        "warmupIterations" : 5,
         "warmupTime" : "10 s",
         "warmupBatchSize" : 1,
         "measurementIterations" : 5,
         "measurementTime" : "10 s",
         "measurementBatchSize" : 1,
         "primaryMetric" : {
-            "score" : 68606.11142518876,
-            "scoreError" : 1193.391967198562,
+            "score" : 59955.548696059894,
+            "scoreError" : 224.30548493078896,
             "scoreConfidence" : [
-                67412.7194579902,
-                69799.50339238733
+                59731.243211129105,
+                60179.85418099068
             ],
             "scorePercentiles" : {
-                "0.0" : 68105.73330686966,
-                "50.0" : 68768.31305715092,
-                "90.0" : 68861.91655797532,
-                "95.0" : 68861.91655797532,
-                "99.0" : 68861.91655797532,
-                "99.9" : 68861.91655797532,
-                "99.99" : 68861.91655797532,
-                "99.999" : 68861.91655797532,
-                "99.9999" : 68861.91655797532,
-                "100.0" : 68861.91655797532
+                "0.0" : 59907.46308674993,
+                "50.0" : 59929.367143605996,
+                "90.0" : 60046.07302746845,
+                "95.0" : 60046.07302746845,
+                "99.0" : 60046.07302746845,
+                "99.9" : 60046.07302746845,
+                "99.99" : 60046.07302746845,
+                "99.999" : 60046.07302746845,
+                "99.9999" : 60046.07302746845,
+                "100.0" : 60046.07302746845
             },
             "scoreUnit" : "ops/s",
             "rawData" : [
                 [
-                    68786.37525823929,
-                    68861.91655797532,
-                    68768.31305715092,
-                    68508.21894570866,
-                    68105.73330686966
+                    60046.07302746845,
+                    59913.89093851557,
+                    59980.94928395956,
+                    59907.46308674993,
+                    59929.367143605996
                 ]
             ]
         },
@@ -100,8 +102,8 @@
         }
     },
     {
-        "jmhVersion" : "1.19",
-        "benchmark" : "org.zalando.logbook.LogbookBenchmark.autoconfigurationRequest",
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.HttpLogFormatterBenchmark.jsonRequest",
         "mode" : "thrpt",
         "threads" : 1,
         "forks" : 1,
@@ -109,40 +111,41 @@
         "jvmArgs" : [
         ],
         "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "25.212-b04",
-        "warmupIterations" : 2,
+        "warmupIterations" : 5,
         "warmupTime" : "10 s",
         "warmupBatchSize" : 1,
         "measurementIterations" : 5,
         "measurementTime" : "10 s",
         "measurementBatchSize" : 1,
         "primaryMetric" : {
-            "score" : 47476.21796428854,
-            "scoreError" : 337.17800503645157,
+            "score" : 295341.63506978075,
+            "scoreError" : 1698.5606820166101,
             "scoreConfidence" : [
-                47139.039959252084,
-                47813.39596932499
+                293643.07438776415,
+                297040.19575179735
             ],
             "scorePercentiles" : {
-                "0.0" : 47352.00917004078,
-                "50.0" : 47470.41321704974,
-                "90.0" : 47574.01889169862,
-                "95.0" : 47574.01889169862,
-                "99.0" : 47574.01889169862,
-                "99.9" : 47574.01889169862,
-                "99.99" : 47574.01889169862,
-                "99.999" : 47574.01889169862,
-                "99.9999" : 47574.01889169862,
-                "100.0" : 47574.01889169862
+                "0.0" : 294773.40934096655,
+                "50.0" : 295264.3437041534,
+                "90.0" : 295896.53944490786,
+                "95.0" : 295896.53944490786,
+                "99.0" : 295896.53944490786,
+                "99.9" : 295896.53944490786,
+                "99.99" : 295896.53944490786,
+                "99.999" : 295896.53944490786,
+                "99.9999" : 295896.53944490786,
+                "100.0" : 295896.53944490786
             },
             "scoreUnit" : "ops/s",
             "rawData" : [
                 [
-                    47470.41321704974,
-                    47574.01889169862,
-                    47542.94288996914,
-                    47441.70565268441,
-                    47352.00917004078
+                    294773.40934096655,
+                    295649.08296826005,
+                    295264.3437041534,
+                    295124.79989061604,
+                    295896.53944490786
                 ]
             ]
         },
@@ -150,8 +153,8 @@
         }
     },
     {
-        "jmhVersion" : "1.19",
-        "benchmark" : "org.zalando.logbook.LogbookBenchmark.autoconfigurationRequestResponse",
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.HttpLogFormatterBenchmark.jsonResponse",
         "mode" : "thrpt",
         "threads" : 1,
         "forks" : 1,
@@ -159,6 +162,262 @@
         "jvmArgs" : [
         ],
         "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 5,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 358234.8077777999,
+            "scoreError" : 1650.262123418304,
+            "scoreConfidence" : [
+                356584.54565438157,
+                359885.06990121823
+            ],
+            "scorePercentiles" : {
+                "0.0" : 358000.3285210379,
+                "50.0" : 358069.65927270736,
+                "90.0" : 358999.4382614109,
+                "95.0" : 358999.4382614109,
+                "99.0" : 358999.4382614109,
+                "99.9" : 358999.4382614109,
+                "99.99" : 358999.4382614109,
+                "99.999" : 358999.4382614109,
+                "99.9999" : 358999.4382614109,
+                "100.0" : 358999.4382614109
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    358076.3244186427,
+                    358999.4382614109,
+                    358069.65927270736,
+                    358000.3285210379,
+                    358028.2884152006
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.HttpLogFormatterBenchmark.streamingJsonRequest",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 5,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 344513.6424963711,
+            "scoreError" : 2062.4731400895325,
+            "scoreConfidence" : [
+                342451.1693562816,
+                346576.11563646066
+            ],
+            "scorePercentiles" : {
+                "0.0" : 343592.3300297484,
+                "50.0" : 344626.50961972843,
+                "90.0" : 344926.742281531,
+                "95.0" : 344926.742281531,
+                "99.0" : 344926.742281531,
+                "99.9" : 344926.742281531,
+                "99.99" : 344926.742281531,
+                "99.999" : 344926.742281531,
+                "99.9999" : 344926.742281531,
+                "100.0" : 344926.742281531
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    344626.50961972843,
+                    344926.742281531,
+                    344574.9531615368,
+                    344847.67738931114,
+                    343592.3300297484
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.HttpLogFormatterBenchmark.streamingJsonResponse",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 5,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 467350.6370808856,
+            "scoreError" : 1854.7527473027649,
+            "scoreConfidence" : [
+                465495.8843335828,
+                469205.38982818834
+            ],
+            "scorePercentiles" : {
+                "0.0" : 466800.5781112852,
+                "50.0" : 467274.96716002346,
+                "90.0" : 467965.501975657,
+                "95.0" : 467965.501975657,
+                "99.0" : 467965.501975657,
+                "99.9" : 467965.501975657,
+                "99.99" : 467965.501975657,
+                "99.999" : 467965.501975657,
+                "99.9999" : 467965.501975657,
+                "100.0" : 467965.501975657
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    467703.6524443653,
+                    466800.5781112852,
+                    467965.501975657,
+                    467008.48571309674,
+                    467274.96716002346
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.HttpLogFormatterBenchmark.streamingRequest",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 5,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 777504.9665291889,
+            "scoreError" : 3527.085847529774,
+            "scoreConfidence" : [
+                773977.8806816591,
+                781032.0523767187
+            ],
+            "scorePercentiles" : {
+                "0.0" : 776886.9836934814,
+                "50.0" : 776962.4638043338,
+                "90.0" : 779034.0174101001,
+                "95.0" : 779034.0174101001,
+                "99.0" : 779034.0174101001,
+                "99.9" : 779034.0174101001,
+                "99.99" : 779034.0174101001,
+                "99.999" : 779034.0174101001,
+                "99.9999" : 779034.0174101001,
+                "100.0" : 779034.0174101001
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    776962.4638043338,
+                    776886.9836934814,
+                    777690.7496173211,
+                    779034.0174101001,
+                    776950.6181207079
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.HttpLogFormatterBenchmark.streamingResponse",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 5,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 732308.6551775152,
+            "scoreError" : 3926.921682292337,
+            "scoreConfidence" : [
+                728381.7334952229,
+                736235.5768598076
+            ],
+            "scorePercentiles" : {
+                "0.0" : 730966.0134269675,
+                "50.0" : 732011.9364991358,
+                "90.0" : 733624.980843342,
+                "95.0" : 733624.980843342,
+                "99.0" : 733624.980843342,
+                "99.9" : 733624.980843342,
+                "99.99" : 733624.980843342,
+                "99.999" : 733624.980843342,
+                "99.9999" : 733624.980843342,
+                "100.0" : 733624.980843342
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    730966.0134269675,
+                    732011.9364991358,
+                    732962.323192295,
+                    731978.021925836,
+                    733624.980843342
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.noopRequestLogstash",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
         "vmVersion" : "25.212-b04",
         "warmupIterations" : 2,
         "warmupTime" : "10 s",
@@ -167,32 +426,899 @@
         "measurementTime" : "10 s",
         "measurementBatchSize" : 1,
         "primaryMetric" : {
-            "score" : 23325.02511146038,
-            "scoreError" : 465.3275515307784,
+            "score" : 304134.13590896374,
+            "scoreError" : 1883.0155486809115,
             "scoreConfidence" : [
-                22859.697559929602,
-                23790.35266299116
+                302251.12036028283,
+                306017.15145764465
             ],
             "scorePercentiles" : {
-                "0.0" : 23194.097979019138,
-                "50.0" : 23274.335095156475,
-                "90.0" : 23502.584057173226,
-                "95.0" : 23502.584057173226,
-                "99.0" : 23502.584057173226,
-                "99.9" : 23502.584057173226,
-                "99.99" : 23502.584057173226,
-                "99.999" : 23502.584057173226,
-                "99.9999" : 23502.584057173226,
-                "100.0" : 23502.584057173226
+                "0.0" : 303435.81495101715,
+                "50.0" : 304274.88492583757,
+                "90.0" : 304603.23863115185,
+                "95.0" : 304603.23863115185,
+                "99.0" : 304603.23863115185,
+                "99.9" : 304603.23863115185,
+                "99.99" : 304603.23863115185,
+                "99.999" : 304603.23863115185,
+                "99.9999" : 304603.23863115185,
+                "100.0" : 304603.23863115185
             },
             "scoreUnit" : "ops/s",
             "rawData" : [
                 [
-                    23386.913917236816,
-                    23502.584057173226,
-                    23267.19450871626,
-                    23194.097979019138,
-                    23274.335095156475
+                    304513.8569296677,
+                    304603.23863115185,
+                    304274.88492583757,
+                    303435.81495101715,
+                    303842.884107144
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.noopResposneLogstash",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 266216.3327948748,
+            "scoreError" : 1703.5055206704703,
+            "scoreConfidence" : [
+                264512.82727420435,
+                267919.83831554523
+            ],
+            "scorePercentiles" : {
+                "0.0" : 265660.00663519173,
+                "50.0" : 266121.55450141546,
+                "90.0" : 266808.7201469924,
+                "95.0" : 266808.7201469924,
+                "99.0" : 266808.7201469924,
+                "99.9" : 266808.7201469924,
+                "99.99" : 266808.7201469924,
+                "99.999" : 266808.7201469924,
+                "99.9999" : 266808.7201469924,
+                "100.0" : 266808.7201469924
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    266482.04373834503,
+                    266808.7201469924,
+                    266009.3389524295,
+                    266121.55450141546,
+                    265660.00663519173
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.requestLogstash",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 145403.90744385048,
+            "scoreError" : 554.5710998510235,
+            "scoreConfidence" : [
+                144849.33634399946,
+                145958.4785437015
+            ],
+            "scorePercentiles" : {
+                "0.0" : 145283.62692015033,
+                "50.0" : 145330.1045641956,
+                "90.0" : 145638.44031300474,
+                "95.0" : 145638.44031300474,
+                "99.0" : 145638.44031300474,
+                "99.9" : 145638.44031300474,
+                "99.99" : 145638.44031300474,
+                "99.999" : 145638.44031300474,
+                "99.9999" : 145638.44031300474,
+                "100.0" : 145638.44031300474
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    145638.44031300474,
+                    145283.62692015033,
+                    145330.1045641956,
+                    145323.56019801143,
+                    145443.8052238904
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.requestPlain",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 47453.14864740729,
+            "scoreError" : 152.5119910198629,
+            "scoreConfidence" : [
+                47300.636656387425,
+                47605.66063842715
+            ],
+            "scorePercentiles" : {
+                "0.0" : 47413.99144057051,
+                "50.0" : 47455.968242033305,
+                "90.0" : 47507.12514703515,
+                "95.0" : 47507.12514703515,
+                "99.0" : 47507.12514703515,
+                "99.9" : 47507.12514703515,
+                "99.99" : 47507.12514703515,
+                "99.999" : 47507.12514703515,
+                "99.9999" : 47507.12514703515,
+                "100.0" : 47507.12514703515
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    47413.99144057051,
+                    47455.968242033305,
+                    47473.17842418026,
+                    47507.12514703515,
+                    47415.47998321724
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.requestResponseLogstash",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 66164.8975031919,
+            "scoreError" : 678.0581025609354,
+            "scoreConfidence" : [
+                65486.83940063096,
+                66842.95560575282
+            ],
+            "scorePercentiles" : {
+                "0.0" : 66001.42472086466,
+                "50.0" : 66119.80346877004,
+                "90.0" : 66447.91083646491,
+                "95.0" : 66447.91083646491,
+                "99.0" : 66447.91083646491,
+                "99.9" : 66447.91083646491,
+                "99.99" : 66447.91083646491,
+                "99.999" : 66447.91083646491,
+                "99.9999" : 66447.91083646491,
+                "100.0" : 66447.91083646491
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    66447.91083646491,
+                    66119.80346877004,
+                    66001.42472086466,
+                    66206.43206196325,
+                    66048.91642789665
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.requestStreamingJsonLogstash",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 158485.86871443343,
+            "scoreError" : 1867.317264955986,
+            "scoreConfidence" : [
+                156618.55144947744,
+                160353.1859793894
+            ],
+            "scorePercentiles" : {
+                "0.0" : 158239.36667413896,
+                "50.0" : 158266.1021735924,
+                "90.0" : 159351.86468248788,
+                "95.0" : 159351.86468248788,
+                "99.0" : 159351.86468248788,
+                "99.9" : 159351.86468248788,
+                "99.99" : 159351.86468248788,
+                "99.999" : 159351.86468248788,
+                "99.9999" : 159351.86468248788,
+                "100.0" : 159351.86468248788
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    159351.86468248788,
+                    158266.1021735924,
+                    158315.6066319419,
+                    158239.36667413896,
+                    158256.40341000594
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.requestStreamingResponseLogstash",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 77859.21610749498,
+            "scoreError" : 285.11586834105634,
+            "scoreConfidence" : [
+                77574.10023915392,
+                78144.33197583604
+            ],
+            "scorePercentiles" : {
+                "0.0" : 77728.5188630064,
+                "50.0" : 77881.80592393976,
+                "90.0" : 77903.95657246781,
+                "95.0" : 77903.95657246781,
+                "99.0" : 77903.95657246781,
+                "99.9" : 77903.95657246781,
+                "99.99" : 77903.95657246781,
+                "99.999" : 77903.95657246781,
+                "99.9999" : 77903.95657246781,
+                "100.0" : 77903.95657246781
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    77878.08544128118,
+                    77881.80592393976,
+                    77728.5188630064,
+                    77903.71373677981,
+                    77903.95657246781
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.responseLogstash",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 128022.07254092561,
+            "scoreError" : 1536.9084450917487,
+            "scoreConfidence" : [
+                126485.16409583387,
+                129558.98098601736
+            ],
+            "scorePercentiles" : {
+                "0.0" : 127364.92045733138,
+                "50.0" : 128084.8383678919,
+                "90.0" : 128448.54736371755,
+                "95.0" : 128448.54736371755,
+                "99.0" : 128448.54736371755,
+                "99.9" : 128448.54736371755,
+                "99.99" : 128448.54736371755,
+                "99.999" : 128448.54736371755,
+                "99.9999" : 128448.54736371755,
+                "100.0" : 128448.54736371755
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    128448.54736371755,
+                    128053.81000091037,
+                    128084.8383678919,
+                    127364.92045733138,
+                    128158.24651477682
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.responsePlain",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 45902.531261846474,
+            "scoreError" : 105.41840701489393,
+            "scoreConfidence" : [
+                45797.11285483158,
+                46007.949668861365
+            ],
+            "scorePercentiles" : {
+                "0.0" : 45861.7692096417,
+                "50.0" : 45904.754745487655,
+                "90.0" : 45934.87465617477,
+                "95.0" : 45934.87465617477,
+                "99.0" : 45934.87465617477,
+                "99.9" : 45934.87465617477,
+                "99.99" : 45934.87465617477,
+                "99.999" : 45934.87465617477,
+                "99.9999" : 45934.87465617477,
+                "100.0" : 45934.87465617477
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    45917.16549225091,
+                    45934.87465617477,
+                    45861.7692096417,
+                    45904.754745487655,
+                    45894.092205677356
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.LogbookBenchmark.responseStreamingJsonLogstash",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "10 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "10 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 134255.74212392775,
+            "scoreError" : 650.8379690097129,
+            "scoreConfidence" : [
+                133604.90415491804,
+                134906.58009293745
+            ],
+            "scorePercentiles" : {
+                "0.0" : 134095.8369623675,
+                "50.0" : 134210.9848623256,
+                "90.0" : 134521.3517351298,
+                "95.0" : 134521.3517351298,
+                "99.0" : 134521.3517351298,
+                "99.9" : 134521.3517351298,
+                "99.99" : 134521.3517351298,
+                "99.999" : 134521.3517351298,
+                "99.9999" : 134521.3517351298,
+                "100.0" : 134521.3517351298
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    134095.8369623675,
+                    134309.80601195438,
+                    134210.9848623256,
+                    134521.3517351298,
+                    134140.73104786154
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.json.JsonMediaTypeBenchmark.plainOld1",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "3 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "3 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 8.130724992527537E7,
+            "scoreError" : 67383.00101704925,
+            "scoreConfidence" : [
+                8.123986692425832E7,
+                8.137463292629242E7
+            ],
+            "scorePercentiles" : {
+                "0.0" : 8.128907651442856E7,
+                "50.0" : 8.130944671407875E7,
+                "90.0" : 8.1325006165673E7,
+                "95.0" : 8.1325006165673E7,
+                "99.0" : 8.1325006165673E7,
+                "99.9" : 8.1325006165673E7,
+                "99.99" : 8.1325006165673E7,
+                "99.999" : 8.1325006165673E7,
+                "99.9999" : 8.1325006165673E7,
+                "100.0" : 8.1325006165673E7
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    8.1325006165673E7,
+                    8.128943506278287E7,
+                    8.128907651442856E7,
+                    8.130944671407875E7,
+                    8.132328516941367E7
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.json.JsonMediaTypeBenchmark.plainOld2",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "3 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "3 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 6.54372458881826E7,
+            "scoreError" : 44273.67458986136,
+            "scoreConfidence" : [
+                6.539297221359274E7,
+                6.548151956277247E7
+            ],
+            "scorePercentiles" : {
+                "0.0" : 6.542453675260146E7,
+                "50.0" : 6.5442024169322014E7,
+                "90.0" : 6.5451035162568465E7,
+                "95.0" : 6.5451035162568465E7,
+                "99.0" : 6.5451035162568465E7,
+                "99.9" : 6.5451035162568465E7,
+                "99.99" : 6.5451035162568465E7,
+                "99.999" : 6.5451035162568465E7,
+                "99.9999" : 6.5451035162568465E7,
+                "100.0" : 6.5451035162568465E7
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    6.5442024169322014E7,
+                    6.542453675260146E7,
+                    6.544259715827893E7,
+                    6.542603619814216E7,
+                    6.5451035162568465E7
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.json.JsonMediaTypeBenchmark.plainOld3",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "3 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "3 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 7.061613928426823E7,
+            "scoreError" : 114857.52467184617,
+            "scoreConfidence" : [
+                7.050128175959638E7,
+                7.073099680894008E7
+            ],
+            "scorePercentiles" : {
+                "0.0" : 7.058581934517018E7,
+                "50.0" : 7.060685736118494E7,
+                "90.0" : 7.064841730663069E7,
+                "95.0" : 7.064841730663069E7,
+                "99.0" : 7.064841730663069E7,
+                "99.9" : 7.064841730663069E7,
+                "99.99" : 7.064841730663069E7,
+                "99.999" : 7.064841730663069E7,
+                "99.9999" : 7.064841730663069E7,
+                "100.0" : 7.064841730663069E7
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    7.064841730663069E7,
+                    7.064704755773541E7,
+                    7.059255485061987E7,
+                    7.060685736118494E7,
+                    7.058581934517018E7
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.json.JsonMediaTypeBenchmark.plainOld4",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "3 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "3 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 5.968772834407954E7,
+            "scoreError" : 66091.63279847633,
+            "scoreConfidence" : [
+                5.962163671128106E7,
+                5.975381997687802E7
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5.966946857987212E7,
+                "50.0" : 5.968377503466853E7,
+                "90.0" : 5.971586853293044E7,
+                "95.0" : 5.971586853293044E7,
+                "99.0" : 5.971586853293044E7,
+                "99.9" : 5.971586853293044E7,
+                "99.99" : 5.971586853293044E7,
+                "99.999" : 5.971586853293044E7,
+                "99.9999" : 5.971586853293044E7,
+                "100.0" : 5.971586853293044E7
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    5.968161049274553E7,
+                    5.966946857987212E7,
+                    5.971586853293044E7,
+                    5.968791908018114E7,
+                    5.968377503466853E7
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.json.JsonMediaTypeBenchmark.regexp1",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "3 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "3 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 1.048532277645119E7,
+            "scoreError" : 25169.206352121353,
+            "scoreConfidence" : [
+                1.0460153570099067E7,
+                1.0510491982803311E7
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.0477778514328506E7,
+                "50.0" : 1.0487489779848862E7,
+                "90.0" : 1.049146450191984E7,
+                "95.0" : 1.049146450191984E7,
+                "99.0" : 1.049146450191984E7,
+                "99.9" : 1.049146450191984E7,
+                "99.99" : 1.049146450191984E7,
+                "99.999" : 1.049146450191984E7,
+                "99.9999" : 1.049146450191984E7,
+                "100.0" : 1.049146450191984E7
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    1.049146450191984E7,
+                    1.0477778514328506E7,
+                    1.0490910106376555E7,
+                    1.0478970979782173E7,
+                    1.0487489779848862E7
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.json.JsonMediaTypeBenchmark.regexp2",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "3 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "3 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 8506677.022456707,
+            "scoreError" : 59217.64393041663,
+            "scoreConfidence" : [
+                8447459.37852629,
+                8565894.666387124
+            ],
+            "scorePercentiles" : {
+                "0.0" : 8486540.056396248,
+                "50.0" : 8510507.324412324,
+                "90.0" : 8522839.465944545,
+                "95.0" : 8522839.465944545,
+                "99.0" : 8522839.465944545,
+                "99.9" : 8522839.465944545,
+                "99.99" : 8522839.465944545,
+                "99.999" : 8522839.465944545,
+                "99.9999" : 8522839.465944545,
+                "100.0" : 8522839.465944545
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    8518251.43578622,
+                    8510507.324412324,
+                    8522839.465944545,
+                    8495246.829744205,
+                    8486540.056396248
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.json.JsonMediaTypeBenchmark.regexp3",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "3 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "3 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 5223514.574798783,
+            "scoreError" : 23676.056401142017,
+            "scoreConfidence" : [
+                5199838.518397641,
+                5247190.631199925
+            ],
+            "scorePercentiles" : {
+                "0.0" : 5219098.086545577,
+                "50.0" : 5221920.918604429,
+                "90.0" : 5234019.21890393,
+                "95.0" : 5234019.21890393,
+                "99.0" : 5234019.21890393,
+                "99.9" : 5234019.21890393,
+                "99.99" : 5234019.21890393,
+                "99.999" : 5234019.21890393,
+                "99.9999" : 5234019.21890393,
+                "100.0" : 5234019.21890393
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    5219178.300835098,
+                    5234019.21890393,
+                    5221920.918604429,
+                    5223356.349104886,
+                    5219098.086545577
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.21",
+        "benchmark" : "org.zalando.logbook.json.JsonMediaTypeBenchmark.regexp4",
+        "mode" : "thrpt",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.fc29.x86_64/jre/bin/java",
+        "jvmArgs" : [
+        ],
+        "jdkVersion" : "1.8.0_212",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.212-b04",
+        "warmupIterations" : 2,
+        "warmupTime" : "3 s",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "3 s",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 3898147.1713728406,
+            "scoreError" : 17000.08126906116,
+            "scoreConfidence" : [
+                3881147.0901037795,
+                3915147.252641902
+            ],
+            "scorePercentiles" : {
+                "0.0" : 3893692.242346533,
+                "50.0" : 3898476.9910045527,
+                "90.0" : 3904878.8936767005,
+                "95.0" : 3904878.8936767005,
+                "99.0" : 3904878.8936767005,
+                "99.9" : 3904878.8936767005,
+                "99.99" : 3904878.8936767005,
+                "99.999" : 3904878.8936767005,
+                "99.9999" : 3904878.8936767005,
+                "100.0" : 3904878.8936767005
+            },
+            "scoreUnit" : "ops/s",
+            "rawData" : [
+                [
+                    3904878.8936767005,
+                    3894687.9738603234,
+                    3898476.9910045527,
+                    3898999.755976095,
+                    3893692.242346533
                 ]
             ]
         },
