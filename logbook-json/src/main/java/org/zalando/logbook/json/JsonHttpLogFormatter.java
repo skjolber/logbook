@@ -68,7 +68,7 @@ public final class JsonHttpLogFormatter implements HttpLogFormatter {
             generator.writeStringField("method", request.getMethod());
 
             generator.writeFieldName("uri");
-            reconstructUri(request, generator, writer);
+            reconstructUri(request, generator);
             
             writeHeaders(generator, request);
     
@@ -139,41 +139,27 @@ public final class JsonHttpLogFormatter implements HttpLogFormatter {
         }
     }
     
-    private void reconstructUri(final HttpRequest request, JsonGenerator generator, StringBuilderWriter writer) throws IOException {
+    private void reconstructUri(final HttpRequest request, JsonGenerator generator) throws IOException {
 
-        generator.writeRawValue("\"");
-
-        // write to underlying stream to avoid creating objects
-        
-        // first flush the json generator
-        generator.flush();
-
-        // then write to the underlying writer / builder
-        StringBuilder builder = writer.getBuilder();
+        StringBuilder builder = new StringBuilder(256);
 
         final String scheme = request.getScheme();
         builder.append(scheme);
-        builder.append("://"); // forward slash escaping is optional, so don't escape
-        
-        // host legal characters: Letters, Numbers 0-9 and Hyphen - none of which are escaped in JSON
+        builder.append("://");
         builder.append(request.getHost()); 
-
         final Optional<Integer> port = request.getPort();
         if (port.isPresent() && isNotStandardPort(scheme, port.get())) {
             builder.append(':').append(port.get());
         }
-        
-        JsonStringEncoder jsonStringEncoder = BufferRecyclers.getJsonStringEncoder();
-        jsonStringEncoder.quoteAsString(request.getPath(), builder); // escape
+        builder.append(request.getPath());
 
         final String query = request.getQuery();
         if (!query.isEmpty()) {
             builder.append('?');
 
-            jsonStringEncoder.quoteAsString(query, builder); // escape
+            builder.append(query);
         }
-        
-        builder.append('"');
+        generator.writeString(builder.toString());
     }
 
     private static boolean isNotStandardPort(final String scheme, final int port) {
