@@ -15,7 +15,6 @@ import static org.apiguardian.api.API.Status.EXPERIMENTAL;
  * @see CompactingJsonBodyFilter
  */
 @API(status = EXPERIMENTAL)
-@Slf4j
 public final class FastCompactingJsonBodyFilter implements BodyFilter {
 
     private final StringReplaceJsonCompactor compactor = new StringReplaceJsonCompactor();

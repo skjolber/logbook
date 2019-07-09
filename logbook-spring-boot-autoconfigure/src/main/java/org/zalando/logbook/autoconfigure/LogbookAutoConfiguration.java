@@ -277,7 +277,7 @@ public class LogbookAutoConfiguration {
     @ConditionalOnMissingBean(HttpLogFormatter.class)
     public HttpLogFormatter jsonFormatter(
             @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection") final ObjectMapper mapper) {
-        return new JsonHttpLogFormatter(mapper);
+        return new JsonHttpLogFormatter(mapper.getFactory());
     }
 
     @API(status = INTERNAL)

@@ -20,7 +20,7 @@ public final class PrettyPrintingJsonBodyFilter implements BodyFilter {
 
     private final JsonFactory factory;
 
-    PrettyPrintingJsonBodyFilter(final JsonFactory factory) {
+    public PrettyPrintingJsonBodyFilter(final JsonFactory factory) {
         this.factory = factory;
     }
 
