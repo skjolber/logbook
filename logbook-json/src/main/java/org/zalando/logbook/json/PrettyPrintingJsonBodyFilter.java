@@ -1,14 +1,16 @@
 package org.zalando.logbook.json;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParser;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apiguardian.api.API;
 import org.zalando.logbook.BodyFilter;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
+import java.io.StringWriter;
 
 import static org.apiguardian.api.API.Status.EXPERIMENTAL;
 
@@ -16,16 +18,14 @@ import static org.apiguardian.api.API.Status.EXPERIMENTAL;
 @Slf4j
 public final class PrettyPrintingJsonBodyFilter implements BodyFilter {
 
-    private final ObjectMapper mapper;
-    private final ObjectWriter writer;
+    private final JsonFactory factory;
 
-    public PrettyPrintingJsonBodyFilter() {
-        this(new ObjectMapper());
+    PrettyPrintingJsonBodyFilter(final JsonFactory factory) {
+        this.factory = factory;
     }
 
-    public PrettyPrintingJsonBodyFilter(final ObjectMapper mapper) {
-        this.mapper = mapper;
-        this.writer = mapper.writerWithDefaultPrettyPrinter();
+    public PrettyPrintingJsonBodyFilter() {
+        this(new JsonFactory());
     }
 
     @Override
@@ -39,14 +39,20 @@ public final class PrettyPrintingJsonBodyFilter implements BodyFilter {
             return body;
         }
 
-        try {
-            @Nullable final JsonNode value = mapper.readTree(body);
-
-            if (value == null) {
-                return body;
+        try (
+            final StringWriter output = new StringWriter(body.length() * 2); // rough estimate of output size
+            final JsonParser parser = factory.createParser(body);
+            final JsonGenerator generator = factory.createGenerator(output);
+                ) {
+            generator.useDefaultPrettyPrinter();
+            
+            while (parser.nextToken() != null) {
+                generator.copyCurrentEvent(parser);
             }
 
-            return writer.writeValueAsString(value);
+            generator.flush();
+            
+            return output.toString();
         } catch (final IOException e) {
             log.trace("Unable to pretty print body. Is it JSON?. Keep it as-is: `{}`", e.getMessage());
             return body;

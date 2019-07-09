@@ -10,7 +10,6 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,14 +31,14 @@ public class JacksonJsonFieldBodyFilter implements BodyFilter {
     private final Set<String> fields;
     private final JsonFactory factory;
 
-    public JacksonJsonFieldBodyFilter(Collection<String> fieldNames, String replacement, ObjectMapper objectMapper) {
+    public JacksonJsonFieldBodyFilter(Collection<String> fieldNames, String replacement, JsonFactory factory) {
         this.fields = new HashSet<>(fieldNames); // thread safe for reading
         this.replacement = replacement;
-        this.factory = objectMapper.getFactory();
+        this.factory = factory;
     }
 
     public JacksonJsonFieldBodyFilter(Collection<String> fieldNames, String replacement) {
-        this(fieldNames, replacement, new ObjectMapper());
+        this(fieldNames, replacement, new JsonFactory());
     }
 
     @Override

@@ -1,6 +1,5 @@
 package org.zalando.logbook.autoconfigure;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.client.HttpClient;
 import org.apiguardian.api.API;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +49,8 @@ import org.zalando.logbook.httpclient.LogbookHttpResponseInterceptor;
 import org.zalando.logbook.json.JsonHttpLogFormatter;
 import org.zalando.logbook.servlet.LogbookFilter;
 import org.zalando.logbook.servlet.SecureLogbookFilter;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.Filter;
 import java.util.List;
