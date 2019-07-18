@@ -28,7 +28,7 @@ public class HttpLogFormatterBenchmark {
     public Object jsonResponse(RequestResponseState state, HttpLogFormatterState httpLogFormatterState) throws Exception {
         return httpLogFormatterState.getJsonHttpLogFormatter().format(state.getDefaultCorrelation(), state.getResponse());
     }
-    /*
+    
     @Benchmark
     public Object defaultRequest(RequestResponseState state, HttpLogFormatterState httpLogFormatterState) throws Exception {
         return httpLogFormatterState.getDefaultHttpLogFormatter().format(state.getDefaultPrecorrelation(), state.getRequest());
@@ -37,8 +37,7 @@ public class HttpLogFormatterBenchmark {
     @Benchmark
     public Object defaultResponse(RequestResponseState state, HttpLogFormatterState httpLogFormatterState) throws Exception {
         return httpLogFormatterState.getDefaultHttpLogFormatter().format(state.getDefaultCorrelation(), state.getResponse());
-    }
-    */
+    }    
 
     public static void main(String[] args) throws RunnerException {
         Options options = new OptionsBuilder().include(HttpLogFormatterBenchmark.class.getSimpleName())

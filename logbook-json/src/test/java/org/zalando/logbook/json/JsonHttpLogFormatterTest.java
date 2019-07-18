@@ -485,7 +485,25 @@ System.out.println(json);
 
         with(json)
                 .assertThat("$.uri", is("http://localhost/test"));
-    }     
+    }
+
+    @Test
+    void shouldNotLogMissingPort() throws IOException {
+        final String correlationId = "3ce91230-677b-11e5-87b7-10ddb1ee7671";
+        final HttpRequest request = MockHttpRequest.create()
+                .withProtocolVersion("HTTP/1.0")
+                .withScheme("http")
+                .withOrigin(REMOTE)
+                .withPort(Optional.empty())
+                .withPath("/test");
+
+        final String json = unit.format(new SimplePrecorrelation(correlationId, systemUTC()), request);
+
+        with(json)
+                .assertThat("$.uri", is("http://localhost/test"));
+    }
+    
+    
     static class SimplePrecorrelation implements Precorrelation {
 
         private final String id;
